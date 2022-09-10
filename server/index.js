@@ -18,7 +18,7 @@ app.get("/", function (req, res) {
     res.send("Hi there");
 });
 app.get("/get", function (req, res) {
-    var SelectQuery = " SELECT * FROM  expenses";
+    var SelectQuery = "SELECT * FROM  expenses";
     db.query(SelectQuery, function (err, result) {
         res.send(result);
     });

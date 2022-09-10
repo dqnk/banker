@@ -19,12 +19,14 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req: any, res: any) => {
   res.send("Hi there");
 });
+
 app.get("/get", (req: any, res: any) => {
-  const SelectQuery = " SELECT * FROM  expenses";
+  const SelectQuery = "SELECT * FROM  expenses";
   db.query(SelectQuery, (err: any, result: any) => {
     res.send(result);
   });
 });
+
 app.post("/insert", (req: any, res: any) => {
   const expenseName = req.body.expenseName;
   const expenseAmount = req.body.expenseAmount;
@@ -34,6 +36,7 @@ app.post("/insert", (req: any, res: any) => {
     console.log(result);
   });
 });
+
 // delete a book from the database
 app.delete("/delete/:expenseId", (req: any, res: any) => {
   const expenseId = req.params.expenseId;
