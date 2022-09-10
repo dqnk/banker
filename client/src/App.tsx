@@ -1,16 +1,15 @@
-import "./App.css";
-import ExpenseTable from "./components/ExpenseTable";
 import React from "react";
-import logo from "./logo.svg";
+import { MyForm } from "./MyForm";
 
-
-function App() {
+const App = () => {
   return (
-    <div className= "App" >
-    <header className="App-header">
-      <ExpenseTable />
-      </header>
-      </div>
+    <div style={{ textAlign: "center" }}>
+      <MyForm
+        onSubmit={({ email, firstName, lastName }) => {
+          console.log(email, firstName, lastName);
+        }}
+      />
+    </div>
   );
-}
+};
 export default App;
