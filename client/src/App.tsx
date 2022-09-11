@@ -6,10 +6,10 @@ import { generate } from "shortid";
 const App = () => {
   const [rows, setRows] = useState([
     {
-      id: "1",
-      firstName: "First Name",
-      lastName: "Last Name",
-      email: "First",
+      id: "",
+      expenseName: "",
+      expenseAmount: 0,
+      email: "",
     },
   ]);
 

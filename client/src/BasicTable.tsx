@@ -11,21 +11,23 @@ import { withStyles } from "@material-ui/core";
 interface Props {
   rows: Array<{
     id: string;
-    firstName: string;
-    lastName: string;
+    expenseName: string;
+    expenseAmount: number;
     email: string;
   }>;
 }
 
 function BasicTable({ rows }: Props) {
+  //remove last element, which is just the placeholder for initial state
+  rows = rows.slice(0, -1);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>id</TableCell>
-            <TableCell>FirstName</TableCell>
-            <TableCell>LastName</TableCell>
+            <TableCell>Expense Name</TableCell>
+            <TableCell>Expense Amount</TableCell>
             <TableCell>Email</TableCell>
           </TableRow>
         </TableHead>
@@ -36,9 +38,9 @@ function BasicTable({ rows }: Props) {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell>{row.id}</TableCell>
-              <TableCell>{row.firstName}</TableCell>
+              <TableCell>{row.expenseName}</TableCell>
               <TableCell component="th" scope="row">
-                {row.lastName}
+                {row.expenseAmount}
               </TableCell>
               <TableCell>{row.email}</TableCell>
             </TableRow>

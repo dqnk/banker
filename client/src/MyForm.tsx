@@ -1,11 +1,12 @@
 import { Button, TextField } from "@material-ui/core";
+import { useSlotProps } from "@mui/base";
 import { Field, Form, Formik } from "formik";
 import * as React from "react";
 import { MyField } from "./MyField";
 
 interface Values {
-  firstName: string;
-  lastName: string;
+  expenseName: string;
+  expenseAmount: number;
   email: string;
 }
 
@@ -16,7 +17,7 @@ interface Props {
 export const MyForm: React.FC<Props> = ({ onSubmit }) => {
   return (
     <Formik
-      initialValues={{ firstName: "", lastName: "", email: "" }}
+      initialValues={{ expenseName: "", expenseAmount: 0, email: "" }}
       onSubmit={(values, { resetForm }) => {
         onSubmit(values);
         resetForm();
@@ -25,10 +26,10 @@ export const MyForm: React.FC<Props> = ({ onSubmit }) => {
       {({ values }) => (
         <Form>
           <div>
-            <Field name="firstName" label="First Name" component={MyField} />
+            <Field name="expenseName" label="Expense" component={MyField} />
           </div>
           <div>
-            <Field name="lastName" label="Last Name" component={MyField} />
+            <Field name="expenseAmount" label="Amount" component={MyField} />
           </div>
           <div>
             <Field name="email" label="Email" component={MyField} />
