@@ -25,19 +25,21 @@ export const MyForm: React.FC<Props> = ({ onSubmit }) => {
       }}
     >
       {({ values }) => (
-        <Form>
-          <div className="Form">
-            <Field name="expenseName" label="Expense" component={MyField} />
-          </div>
-          <div>
-            <Field name="expenseAmount" label="Amount" component={MyField} />
-          </div>
-          <div>
-            <Field name="email" label="Email" component={MyField} />
-          </div>
-          <Button type="submit">submit</Button>
-          <pre>{JSON.stringify(values, null, 2)}</pre>
-        </Form>
+        <div className="Form">
+          <Form>
+            <div>
+              <Field name="expenseName" label="Expense" component={MyField} />
+            </div>
+            <div>
+              <Field name="expenseAmount" label="Amount" component={MyField} />
+            </div>
+            <div>
+              <Field name="email" label="Email" component={MyField} />
+            </div>
+            <Button type="submit">submit</Button>
+            <pre>{JSON.stringify(values, null, 2)}</pre>
+          </Form>
+        </div>
       )}
     </Formik>
   );

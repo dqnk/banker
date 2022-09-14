@@ -1,9 +1,3 @@
-.Form {
-    border-color: white;
-    color: white;
-    text-decoration-color: white;
-}
-.c-input{
-
-    color: white;
+.Form *{
+    color: white !important;
 }
