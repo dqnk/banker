@@ -6,5 +6,5 @@ export const MyField: React.FC<FieldProps & TextFieldProps> = ({
   label,
   field,
 }) => {
-  return <TextField label={label} {...field} />;
+  return <TextField variant="filled" label={label} {...field} />;
 };

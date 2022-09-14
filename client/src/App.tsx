@@ -25,17 +25,19 @@ const App = () => {
     <div className="App" style={{ textAlign: "center" }}>
       <header className="App-header">
         <ThemeProvider theme={darkTheme}>
-          <MyForm
-            onSubmit={(data) => {
-              setRows((currentRows) => [
-                {
-                  id: generate(),
-                  ...data,
-                },
-                ...currentRows,
-              ]);
-            }}
-          />
+          <div className="InputField">
+            <MyForm
+              onSubmit={(data) => {
+                setRows((currentRows) => [
+                  {
+                    id: generate(),
+                    ...data,
+                  },
+                  ...currentRows,
+                ]);
+              }}
+            />
+          </div>
           <BasicTable rows={rows} />
         </ThemeProvider>
       </header>
