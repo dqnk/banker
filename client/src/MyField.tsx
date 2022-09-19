@@ -6,5 +6,15 @@ export const MyField: React.FC<FieldProps & TextFieldProps> = ({
   label,
   field,
 }) => {
-  return <TextField variant="filled" label={label} {...field} />;
+  return (
+    <TextField
+      variant="filled"
+      InputProps={{ style: { color: "white" } }}
+      InputLabelProps={{
+        style: { color: "#fff" },
+      }}
+      label={label}
+      {...field}
+    />
+  );
 };

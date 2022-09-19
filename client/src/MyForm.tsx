@@ -3,7 +3,6 @@ import { useSlotProps } from "@mui/base";
 import { Field, Form, Formik } from "formik";
 import * as React from "react";
 import { MyField } from "./MyField";
-import "./MyForm.css";
 
 interface Values {
   expenseName: string;
@@ -25,7 +24,7 @@ export const MyForm: React.FC<Props> = ({ onSubmit }) => {
       }}
     >
       {({ values }) => (
-        <div className="Form">
+        <div>
           <Form>
             <div>
               <Field name="expenseName" label="Expense" component={MyField} />
@@ -36,7 +35,9 @@ export const MyForm: React.FC<Props> = ({ onSubmit }) => {
             <div>
               <Field name="email" label="Email" component={MyField} />
             </div>
-            <Button type="submit">submit</Button>
+            <Button type="submit" color="inherit">
+              submit
+            </Button>
             <pre>{JSON.stringify(values, null, 2)}</pre>
           </Form>
         </div>

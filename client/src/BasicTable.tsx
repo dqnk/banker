@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { withStyles } from "@material-ui/core";
+import { makeStyles, withStyles } from "@material-ui/core";
 
 interface Props {
   rows: Array<{
@@ -17,12 +17,21 @@ interface Props {
   }>;
 }
 
+const useStyles = makeStyles({
+  container: {
+    maxWidth: 1000,
+  },
+});
+
 function BasicTable({ rows }: Props) {
   //remove last element, which is just the placeholder for initial state
+  // TODO: make this better
   rows = rows.slice(0, -1);
+
+  const classes = useStyles();
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+    <TableContainer className={classes.container} component={Paper}>
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>id</TableCell>
