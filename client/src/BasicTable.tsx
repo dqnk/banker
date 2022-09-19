@@ -6,7 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { makeStyles, withStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
 interface Props {
   rows: Array<{
