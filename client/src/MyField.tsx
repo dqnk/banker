@@ -9,6 +9,7 @@ export const MyField: React.FC<FieldProps & TextFieldProps> = ({
   return (
     <TextField
       variant="filled"
+      autoComplete="off"
       InputProps={{ style: { color: "white" } }}
       InputLabelProps={{
         style: { color: "#fff" },
