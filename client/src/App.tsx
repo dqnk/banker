@@ -25,20 +25,25 @@ const App = () => {
     <div className="App" style={{ textAlign: "center" }}>
       <header className="App-header">
         <ThemeProvider theme={darkTheme}>
-          <div className="InputField">
-            <MyForm
-              onSubmit={(data) => {
-                setRows((currentRows) => [
-                  {
-                    id: generate(),
-                    ...data,
-                  },
-                  ...currentRows,
-                ]);
-              }}
-            />
+          <div className="app-starter">
+            <div className="InputField">
+              <MyForm
+                onSubmit={(data) => {
+                  setRows((currentRows) => [
+                    {
+                      id: generate(),
+                      ...data,
+                    },
+                    ...currentRows,
+                  ]);
+                }}
+              />
+            </div>
+            <div className="app-placeholder"></div>
           </div>
-          <BasicTable rows={rows} />
+          <div className="app-continue">
+            <BasicTable rows={rows} />
+          </div>
         </ThemeProvider>
       </header>
     </div>
