@@ -37,20 +37,17 @@ const renderCustomizedLabel = ({
   );
 };
 
-export default class Example extends PureComponent {
-  static demoUrl =
-    "https://codesandbox.io/s/pie-chart-with-customized-label-dlhhj";
-
+export default class MyChart extends PureComponent {
   render() {
     return (
-      <PieChart width={400} height={400}>
+      <PieChart width={250} height={250}>
         <Pie
           data={data}
           cx="50%"
           cy="50%"
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={120}
           fill="#8884d8"
           dataKey="value"
         >

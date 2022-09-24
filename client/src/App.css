@@ -23,9 +23,9 @@
 .app-starter {
   background-color: #36393f;
   display: flex;
+  max-width: 70vw;
   flex-direction: row;
-  align-items: right;
-  justify-content: top;
+  justify-content: space-between;
   padding-top: 5vh;
   padding-bottom: 5vh;
   font-size: calc(10px + 2vmin);
@@ -39,7 +39,6 @@
   max-width: 70vw;
   flex-direction: column;
   align-items: right;
-  justify-content: right;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -48,4 +47,7 @@
   min-width: 40vw;
   min-height: 10vh;
   background-color: white;
+}
+.Chart {
+  align-items: right;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MyForm } from "./MyForm";
-import Example from "./MyChart";
+import PieChart from "./MyChart";
 import BasicTable from "./BasicTable";
 import { generate } from "shortid";
 import "./App.css";
@@ -40,9 +40,9 @@ const App = () => {
                 }}
               />
             </div>
-          </div>
-          <div className="app-placeholder">
-            <Example />
+            <div className="Chart">
+              <PieChart />
+            </div>
           </div>
           <div className="app-continue">
             <BasicTable rows={rows} />

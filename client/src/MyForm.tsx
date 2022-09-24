@@ -37,7 +37,6 @@ export const MyForm: React.FC<Props> = ({ onSubmit }) => {
             <Button type="submit" color="inherit">
               submit
             </Button>
-            <pre>{JSON.stringify(values, null, 2)}</pre>
           </Form>
         </div>
       )}
