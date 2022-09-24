@@ -1,12 +1,12 @@
 import * as React from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import { DataGrid, GridColDef, GridValueGetterParams } from "@mui/x-data-grid";
 
+const columns: GridColDef[] = [
+  { field: "id", headerName: "ID", width: 150 },
+  { field: "expenseName", headerName: "Expense Name", width: 200 },
+  { field: "expenseAmount", headerName: "Expense Amount", width: 200 },
+  { field: "email", headerName: "Email", width: 200 },
+];
 interface Props {
   rows: Array<{
     id: string;
@@ -22,33 +22,15 @@ function BasicTable({ rows }: Props) {
   rows = rows.slice(0, -1);
 
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>id</TableCell>
-            <TableCell>Expense Name</TableCell>
-            <TableCell>Expense Amount</TableCell>
-            <TableCell>Email</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell>{row.id}</TableCell>
-              <TableCell>{row.expenseName}</TableCell>
-              <TableCell component="th" scope="row">
-                {row.expenseAmount}
-              </TableCell>
-              <TableCell>{row.email}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <div style={{ height: 400, width: "100%" }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
+        checkboxSelection
+      />
+    </div>
   );
 }
 
