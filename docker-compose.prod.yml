@@ -46,6 +46,7 @@ services:
 
   client:
     stdin_open: true
+    #    restart: always
     environment:
       - CHOKIDAR_USERPOLLING=true
     build:
