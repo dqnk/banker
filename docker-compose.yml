@@ -39,7 +39,7 @@ services:
       - mysql_db
     volumes:
       - /app/node_modules
-      - ./server:/app
+      - ./server:/app/api
     environment:
       <<: *common-variables
       MYSQL_HOST_IP: mysql_db
@@ -52,7 +52,7 @@ services:
       dockerfile: Dockerfile
       context: client
     volumes:
-      - /app/node_modules
+      - ./client/node_modules:/app/node_modules
       - ./client:/app
 
   adminer:
