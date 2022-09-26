@@ -8,6 +8,11 @@ const data = [
   { name: "Group D", value: 200 },
 ];
 
+const newData = data.map(({ name, value }) => ({
+  newName: name,
+  newValue: value,
+}));
+
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const RADIAN = Math.PI / 180;
@@ -36,26 +41,35 @@ const renderCustomizedLabel = ({
     </text>
   );
 };
-
-export default class MyChart extends PureComponent {
-  render() {
-    return (
-      <PieChart width={250} height={250}>
-        <Pie
-          data={data}
-          cx="50%"
-          cy="50%"
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={120}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-      </PieChart>
-    );
-  }
+interface Props {
+  rows: Array<{
+    id: string;
+    expenseName: string;
+    expenseAmount: number;
+    email: string;
+  }>;
+}
+export default function MyChart(rows) {
+  rows = rows.slice(0, -1);
+  return (
+    <PieChart width={250} height={250}>
+      <Pie
+        data={rows.map(({ expenseName, expenseAmount }) => ({
+          name: expenseName,
+          vaule: expenseAmount,
+        }))}
+        cx="50%"
+        cy="50%"
+        labelLine={false}
+        label={renderCustomizedLabel}
+        outerRadius={120}
+        fill="#8884d8"
+        dataKey="value"
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+    </PieChart>
+  );
 }
