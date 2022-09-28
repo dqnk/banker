@@ -14,7 +14,7 @@ interface Props {
     email: string;
   }>;
 }
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#FF2299"];
+const COLORS = ["#FFBB28", "#FF8042", "#FF2299", "#00C49F", "#0088FE"];
 
 export default function MyDoughnut(props: Props) {
   const rows = props.rows
