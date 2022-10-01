@@ -8,7 +8,6 @@ x-common-variables: &common-variables
 services:
   mysql_db:
     image: mysql
-    restart: always
     cap_add:
       - SYS_NICE
     volumes:
@@ -24,7 +23,6 @@ services:
     depends_on:
       - api
       - client
-    restart: always
     build:
       dockerfile: Dockerfile
       context: ./nginx
@@ -57,7 +55,6 @@ services:
 
   adminer:
     image: adminer:latest
-    restart: unless-stopped
     ports:
       - 8080:8080
     depends_on:
