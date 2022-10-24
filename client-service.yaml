@@ -9,10 +9,12 @@ metadata:
     io.kompose.service: client
   name: client
 spec:
+  type: NodePort
   ports:
     - name: "3050"
       port: 3050
       targetPort: 3000
+      nodePort: 30001
   selector:
     io.kompose.service: client
 status:
