@@ -33,7 +33,7 @@ spec:
               value: MYSQL_PASSWORD
             - name: MYSQL_USER
               value: MYSQL_USER
-          image: api
+          image: api:local
           name: api
           ports:
             - containerPort: 3000

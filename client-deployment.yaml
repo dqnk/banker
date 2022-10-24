@@ -27,7 +27,7 @@ spec:
         - env:
             - name: CHOKIDAR_USERPOLLING
               value: "true"
-          image: client
+          image: client:local
           name: client
           ports:
             - containerPort: 3000
