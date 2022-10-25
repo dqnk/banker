@@ -41,7 +41,7 @@ services:
       dockerfile: Dockerfile.prod
       context: client
     ports: 
-      - 3050:3000
+      - 3000:3000
 
   adminer:
     image: adminer:latest
