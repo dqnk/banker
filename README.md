@@ -11,3 +11,5 @@
 `kubectl service expose/create ...`
 
 `minikube ip`
+
+`minikube service <service-name>`
