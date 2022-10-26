@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: client
   name: client
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - name: "3050"
       port: 3000
