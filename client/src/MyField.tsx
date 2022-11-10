@@ -1,11 +1,7 @@
 import * as React from "react";
-import { TextField, TextFieldProps } from "@material-ui/core";
-import { FieldProps } from "formik";
+import { TextField } from "@material-ui/core";
 
-export const MyField: React.FC<FieldProps & TextFieldProps> = ({
-  label,
-  field,
-}) => {
+export function MyField({ label, field }) {
   return (
     <TextField
       variant="filled"
@@ -18,4 +14,4 @@ export const MyField: React.FC<FieldProps & TextFieldProps> = ({
       {...field}
     />
   );
-};
+}

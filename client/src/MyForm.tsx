@@ -3,17 +3,7 @@ import { Field, Form, Formik } from "formik";
 import * as React from "react";
 import { MyField } from "./MyField";
 
-interface Values {
-  expenseName: string;
-  expenseAmount: number;
-  email: string;
-}
-
-interface Props {
-  onSubmit: (values: Values) => void;
-}
-
-export const MyForm: React.FC<Props> = ({ onSubmit }) => {
+export function MyForm({ onSubmit }) {
   return (
     <Formik
       initialValues={{ expenseName: "", expenseAmount: 0, email: "" }}
@@ -42,4 +32,4 @@ export const MyForm: React.FC<Props> = ({ onSubmit }) => {
       )}
     </Formik>
   );
-};
+}
