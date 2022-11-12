@@ -1,4 +1,4 @@
-import React { useState } from "react";
+import React, { useState } from "react";
 import { MyForm } from "./MyForm";
 import Doughnut from "./MyDoughnut";
 import BasicTable from "./BasicTable";
@@ -12,7 +12,7 @@ const darkTheme = createTheme({
   },
 });
 
-export function App() {
+function App() {
   const [rows, setRows] = useState([
     {
       id: "",
