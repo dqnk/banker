@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React { useState } from "react";
 import { MyForm } from "./MyForm";
 import Doughnut from "./MyDoughnut";
 import BasicTable from "./BasicTable";
@@ -12,7 +12,7 @@ const darkTheme = createTheme({
   },
 });
 
-const App = () => {
+export function App() {
   const [rows, setRows] = useState([
     {
       id: "",
@@ -21,6 +21,7 @@ const App = () => {
       email: "",
     },
   ]);
+
   return (
     <div className="App" style={{ textAlign: "center" }}>
       <header className="App-header">
@@ -50,5 +51,5 @@ const App = () => {
       </header>
     </div>
   );
-};
+}
 export default App;
