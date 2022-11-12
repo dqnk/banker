@@ -40,7 +40,7 @@ services:
     build:
       dockerfile: Dockerfile.prod
       context: client
-    ports: 
+    ports:
       - 3000:3000
 
   adminer:

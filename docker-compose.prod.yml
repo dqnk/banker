@@ -28,7 +28,7 @@ services:
       dockerfile: Dockerfile
       context: nginx
     ports:
-      - "3050:80"
+      - "3000:80"
 
   api:
     image: api:local
@@ -42,7 +42,6 @@ services:
       MYSQL_HOST_IP: mysql-db
     ports:
       - "3001:80"
-
 
   client:
     image: client:local
