@@ -37,6 +37,7 @@ spec:
             - name: MYSQL_USER
               value: MYSQL_USER
           image: mysql
+          imagePullPolicy: IfNotPresent
           name: mysql-db
           ports:
             - containerPort: 3306
